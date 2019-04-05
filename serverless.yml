@@ -34,7 +34,7 @@ provider:
 
 functions:
   create:
-    handler: create.main
+    handler: src/create.main
     events:
       - http:
           path: notes
@@ -43,7 +43,7 @@ functions:
           authorizer: aws_iam
 
   get:
-    handler: get.main
+    handler: src/get.main
     events:
       - http:
           path: notes/{id}
@@ -51,7 +51,7 @@ functions:
           cors: true
           authorizer: aws_iam
   list:
-    handler: list.main
+    handler: src/list.main
     events:
       - http:
           path: notes
