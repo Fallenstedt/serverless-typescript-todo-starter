@@ -1,16 +1,16 @@
 {
   "name": "notes-app-api",
   "version": "1.1.0",
-  "description": "A Node.js starter for the Serverless Framework with async/await and unit test support",
+  "description": "A TS starter for the Serverless Framework with unit test support",
   "main": "handler.js",
   "scripts": {
     "test": "jest"
   },
-  "author": "",
+  "author": "Alex Fallenstedt",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AnomalyInnovations/serverless-nodejs-starter.git"
+    "url": "https://github.com/Fallenstedt/serverless-typescript-todo-starter.git"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.23",
@@ -21,12 +21,10 @@
     "serverless-webpack": "^5.1.0",
     "ts-loader": "^5.3.3",
     "typescript": "^3.4.2",
-    "webpack": "^4.16.2",
-    "webpack-node-externals": "^1.6.0"
+    "webpack": "^4.16.2"
   },
   "dependencies": {
-    "babel-runtime": "^6.26.0",
-    "source-map-support": "^0.4.18",
+    "source-map-support": "^0.5.10",
     "tslib": "^1.9.3",
     "uuid": "^3.3.2"
   }
