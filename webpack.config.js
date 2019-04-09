@@ -8,6 +8,10 @@ module.exports = {
   resolve: {
     extensions: [".js", ".jsx", ".json", ".ts", ".tsx"]
   },
+  optimization: {
+    // We do not want to minimize our code.
+    minimize: true
+  },
   output: {
     libraryTarget: "commonjs",
     path: path.join(__dirname, ".webpack"),

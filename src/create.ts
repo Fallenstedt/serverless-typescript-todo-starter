@@ -1,5 +1,5 @@
 import uuid from "uuid";
-import * as dynamoDbLib from "../libs/dynamodb-lib";
+import { call } from "../libs/dynamodb-lib";
 import { success, failure } from "../libs/response-lib";
 import { APIGatewayEvent } from "aws-lambda";
 
@@ -17,7 +17,7 @@ export async function main(event: APIGatewayEvent) {
   };
 
   try {
-    await dynamoDbLib.call("put", params);
+    await call("put", params);
     return success(params.Item);
   } catch (e) {
     return failure({ status: false });
