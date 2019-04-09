@@ -1,4 +1,4 @@
-import * as dynamoDbLib from "../libs/dynamodb-lib";
+import { call } from "../libs/dynamodb-lib";
 import { success, failure } from "../libs/response-lib";
 import { APIGatewayEvent } from "aws-lambda";
 
@@ -30,7 +30,7 @@ export async function main(event: APIGatewayEvent) {
   };
 
   try {
-    const result = await dynamoDbLib.call("update", params);
+    const result = await call("update", params);
     return success({ status: true, result });
   } catch (e) {
     console.log(e);

@@ -1,4 +1,4 @@
-import * as dynamoDbLib from "../libs/dynamodb-lib";
+import { call } from "../libs/dynamodb-lib";
 import { success, failure } from "../libs/response-lib";
 import { APIGatewayEvent } from "aws-lambda";
 
@@ -15,7 +15,7 @@ export async function main(event: APIGatewayEvent) {
   };
 
   try {
-    await dynamoDbLib.call("delete", params);
+    await call("delete", params);
     return success({ status: true });
   } catch (e) {
     return failure({ status: false });

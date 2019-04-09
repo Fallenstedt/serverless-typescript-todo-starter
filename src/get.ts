@@ -1,4 +1,4 @@
-import * as dynamoDbLib from "../libs/dynamodb-lib";
+import { call } from "../libs/dynamodb-lib";
 import { success, failure } from "../libs/response-lib";
 import { APIGatewayEvent } from "aws-lambda";
 
@@ -11,7 +11,7 @@ export async function main(event: APIGatewayEvent) {
     }
   };
   try {
-    const result = await dynamoDbLib.call("get", params);
+    const result = await call("get", params);
     if (result.Item) {
       // Return the retrieved item
       return success(result.Item);
