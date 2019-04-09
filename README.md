@@ -88,3 +88,7 @@ To add environment variables to your project
 2. Add environment variables for the various stages to `env.yml`.
 3. Uncomment `environment: ${file(env.yml):${self:provider.stage}}` in the `serverless.yml`.
 4. Make sure to not commit your `env.yml`.
+
+### Todo
+
+- Add CloudFormation Template for DynamoDB, AWS Cognito
