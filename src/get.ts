@@ -1,7 +1,8 @@
 import * as dynamoDbLib from "../libs/dynamodb-lib";
 import { success, failure } from "../libs/response-lib";
+import { APIGatewayEvent } from "aws-lambda";
 
-export async function main(event, context) {
+export async function main(event: APIGatewayEvent) {
   const params = {
     TableName: "notes",
     Key: {

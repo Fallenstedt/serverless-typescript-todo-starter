@@ -1,8 +1,9 @@
 import * as dynamoDbLib from "../libs/dynamodb-lib";
 import { success, failure } from "../libs/response-lib";
+import { APIGatewayEvent } from "aws-lambda";
 
 // https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html#update-property
-export async function main(event, context) {
+export async function main(event: APIGatewayEvent) {
   const data = JSON.parse(event.body);
   console.log(data);
   console.log(event.pathParameters.id);
