@@ -1,4 +1,4 @@
-import { call } from "../libs/dynamodb-lib";
+import { lib } from "../libs/dynamodb-lib";
 import { success, failure } from "../libs/response-lib";
 import { APIGatewayEvent } from "aws-lambda";
 
@@ -18,7 +18,7 @@ export async function main(event: APIGatewayEvent) {
   };
 
   try {
-    const result = await call("query", params);
+    const result = await lib.call("query", params);
     // Return the matching list of items in response body
     return success(result.Items);
   } catch (e) {
