@@ -1,0 +1,20 @@
+Resources:
+  NotesTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: notes
+      AttributeDefinitions:
+        - AttributeName: userid
+          AttributeType: S
+        - AttributeName: noteid
+          AttributeType: S
+      KeySchema:
+        - AttributeName: userid
+          KeyType: HASH
+        - AttributeName: noteid
+          KeyType: RANGE
+      ProvisionedThroughput:
+        ReadCapacityUnits: ${self:custom.tableThroughput}
+        WriteCapacityUnits: ${self:custom.tableThroughput}
+
+      Tags:

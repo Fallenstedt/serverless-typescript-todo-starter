@@ -14,7 +14,7 @@ custom:
 provider:
   name: aws
   runtime: nodejs8.10
-  stage: prod
+  stage: dev
   region: us-west-2
 
   # 'iamRoleStatements' defines the permission policy for the Lambda function.
@@ -34,6 +34,8 @@ provider:
 resources:
   # API Gateway Errors
   - ${file(resources/api-gateway-errors.yml)}
+  # DynamoDB
+  - ${file(resources/dynamodb-table.yml)}
 
 functions:
   create:
