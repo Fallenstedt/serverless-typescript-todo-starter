@@ -1,0 +1,22 @@
+Resources:
+  AttachmentsBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      CorsConfiguration:
+        CorsRules:
+          - AllowedOrigins:
+              - "*"
+            AllowedHeaders:
+              - "*"
+            AllowedMethods:
+              - GET
+              - PUT
+              - POST
+              - DELETE
+              - HEAD
+            MaxAge: 3000
+
+Outputs:
+  AttachmentsBucketName:
+    Description: Lets CloudFormation generate the name for us and we just add the 'Outputs' block to tell it to print it out so we can use it later.
+    Value: !Ref AttachmentsBucket
